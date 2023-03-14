@@ -1,4 +1,6 @@
-This will be my portfolio page with 5 sections:
+This will be my portfolio page with 5 sections which will also populate the navbar:
+
+0. Navbar - name and the following sections
 
 1. Home - name, title, and contact button
 2. About - a brief about me
