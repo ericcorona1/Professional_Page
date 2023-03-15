@@ -4,7 +4,178 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Eric Corona | The Caring Coder</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <a href="#main-content" class="screenreader-text" id="skip-nav"
+        >Skip to Content</a
+      >
+      <h1>Eric "Cisco" Corona</h1>
+      <nav class="primary-nav">
+        <ul class="navbar" role="list">
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#contact">Contact Me</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="home" id="home" aria-labelledby="home-title">
+        <div class="container flow">
+          <header>
+            <h2 id="home-title">Eric "Cisco" Corona</h2>
+            <p class="section-subtitle">
+              The Caring Coder: non-profit to front-end web development
+            </p>
+          </header>
+          <a href="#contact" class="button">Contact Me</a>
+        </div>
+      </section>
+      <section class="about" id="about" aria-labelledby="about-title">
+        <div class="container flow">
+          <header>
+            <h2 id="about-title">About Me</h2>
+          </header>
+          <p class="description">
+            Enthusiastic learner with a solid understanding of front-end
+            development and strong interpersonal and communication skills that
+            make working on a team hassle-free.
+          </p>
+        </div>
+      </section>
+      <section class="skills" id="skills" aria-labelledby="skills-title">
+        <div class="container flow">
+          <header>
+            <h2 id="skills-title">Skills</h2>
+          </header>
+          <ul class="primary-skills" role="list">
+            <li>
+              <h3>Technical</h3>
+              <ul class="technical-list" role="list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+              </ul>
+            </li>
+            <li>
+              <h3>Tools</h3>
+              <ul class="tool-list" role="list">
+                <li>Git</li>
+                <li>Bash</li>
+                <li>VS Code</li>
+              </ul>
+            </li>
+            <li>
+              <h3>Soft Skills</h3>
+              <ul class="soft-list" role="list">
+                <li>Crisis management</li>
+                <li>Expectation setting</li>
+                <li>Problem solving</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="container flow">
+          <header>
+            <h2>Projects</h2>
+          </header>
+          <div class="project-container"></div>
+          <div class="project-container"></div>
+          <div class="project-container"></div>
+        </div>
+      </section>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="container flow">
+          <header>
+            <h2 id="contact-title">Get In Touch</h2>
+          </header>
+          <div class="contact-types">
+            <ul class="contact-list" role="list">
+              <li>
+                <h3>Phone</h3>
+                <p class="contact-info">209 200 5406</p>
+              </li>
+              <li>
+                <h3>Email</h3>
+                <p class="contact-info">ericcorona3@gmail.com</p>
+              </li>
+            </ul>
+          </div>
+          <div class="container">
+            <form
+              action="mailto:ericcorona3@gmail.com"
+              method="get"
+              enctype="text/plain"
+            >
+              <div class="form-section">
+                <!-- aria live assertive? if invalid input to be given aria-invalid='true' and connected to hint using aria-describedby ie 'email-hint'-->
+                <label for="fullname">Full Name: </label>
+                <input
+                  type="text"
+                  name="fullname"
+                  id="fullname"
+                  placeholder="Full name"
+                />
+                <p class="hint hidden" id="fullname-hint">
+                  Please enter full name
+                </p>
+              </div>
+              <div class="form-section">
+                <label for="email">Email: </label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                />
+                <p class="hint hidden" id="email-hint">
+                  Please enter valid email address
+                </p>
+              </div>
+              <div class="form-section">
+                <label for="message">Message: </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Leave a message.."
+                ></textarea>
+                <p class="hint hidden" id="message-hint">
+                  Please enter a message
+                </p>
+              </div>
+
+              <div aria-live="assertive" id="aria-message"></div>
+
+              <button type="submit">SEND</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="primary-footer">
+      <p>Find me at:</p>
+      <ul class="social-list" role="list">
+        <li>Github</li>
+        <li>Freecodecamp</li>
+      </ul>
+      <p>Thanks you for visiting</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>
