@@ -8,10 +8,11 @@
     <title>Eric Corona | The Caring Coder</title>
   </head>
   <body>
-    <header>
+    <header class="nav-header">
       <a href="#main-content" class="screenreader-text" id="skip-nav"
         >Skip to Content</a
       >
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <h1>Eric "Cisco" Corona</h1>
       <nav class="primary-nav">
         <ul class="navbar" role="list">
@@ -30,11 +31,11 @@
           <li>
             <a href="#contact">Contact Me</a>
           </li>
-          <a href="javascript:void(0);" class="icon" onclick="closeNav()">
-            &#9776;
-          </a>
         </ul>
       </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
     </header>
     <main id="main-content">
       <section class="home" id="home" aria-labelledby="home-title">
