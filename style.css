@@ -20,22 +20,39 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  :after,
+  :before {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    -webkit-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   margin: 0;
-  background: ;
+  background: var(--background-color);
   font-family: "Courier New", Courier, monospace;
   font-weight: 400;
 }
 
 main {
   height: 200vh;
-  background-color: ;
+  background-color: var(--background-color);
   display: grid;
-  :place-items: center;
+  place-items: center;
 }
 
 .nav-header {
-  background: #999;
+  background: var(--nav-color);
   text-align: center;
   position: fixed;
   z-index: 999;
@@ -46,7 +63,6 @@ main {
   position: absolute !important;
   top: -9999px !important;
   right: -9999px !important;
-  display: none;
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
@@ -115,7 +131,7 @@ nav li {
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.1em;
   opacity: 0;
   text-transform: uppercase;
   transition: opacity 150ms ease-in-out;
@@ -123,7 +139,6 @@ nav a {
 
 nav a:hover {
   color: #000;
-  text-decoration: underline;
 }
 
 .nav-toggle:checked ~ nav {
@@ -131,21 +146,89 @@ nav a:hover {
 }
 
 .nav-toggle:checked ~ nav a {
-    opacity: 1;
-    transition: opacity 250ms ease-in-out 200ms;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 200ms;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1100px) {
   .nav-toggle-label {
     display: none;
   }
 
   .nav-header {
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
   }
 
   h1 {
     grid-column: 2 / 3;
   }
+
+  nav {
+    /* Edge support: unset all nav styles*/
+    position: relative;
+    text-align: right;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support */
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 2em;
+    /* margin-bottom: 0; */
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a:before {
+    content: "";
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+}
+
+.home {
+  padding-top: 5em;
+}
+
+.screenreader-text {
+  height: 1px;
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}
+
+.screenreader-text:focus {
+  display: inline-block;
+  height: auto;
+  margin: auto;
+  position: static;
+  width: auto;
 }
