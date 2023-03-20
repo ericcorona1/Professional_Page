@@ -17,7 +17,7 @@
       <nav class="primary-nav">
         <ul class="navbar" role="list">
           <li class="active">
-            <a href="/">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li>
             <a href="#about">About</a>
@@ -38,7 +38,7 @@
       </label>
     </header>
     <main id="main-content">
-      <section class="home" id="home" aria-labelledby="home-title">
+      <section class="home banner" id="home" aria-labelledby="home-title">
         <div class="container flow">
           <header>
             <h2 id="home-title">Eric "Cisco" Corona</h2>
@@ -105,10 +105,10 @@
         </div>
       </section>
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="container flow">
-          <header>
-            <h2 id="contact-title">Get In Touch</h2>
-          </header>
+        <header>
+          <h2 id="contact-title">Get In Touch</h2>
+        </header>
+        <div class="contact-container">
           <div class="contact-types">
             <ul class="contact-list" role="list">
               <li>
@@ -126,7 +126,7 @@
               </li>
             </ul>
           </div>
-          <div class="container">
+          <div class="contact-form">
             <form
               action="mailto:ericcorona3@gmail.com"
               method="get"
@@ -158,7 +158,7 @@
                 </p>
               </div>
               <div class="form-section">
-                <label for="message">Message: </label>~
+                <label for="message">Message: </label>
                 <textarea
                   name="message"
                   id="message"
@@ -171,7 +171,7 @@
 
               <div aria-live="assertive" id="aria-message"></div>
 
-              <button type="submit">SEND</button>
+              <button type="submit" class="button">SEND</button>
             </form>
           </div>
         </div>
