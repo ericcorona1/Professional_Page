@@ -6,6 +6,8 @@
   --button-color: rgb(230, 173, 182);
   --button-hover: #000;
   --outline-focus: #000;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
 
   /* outline */
   --outline-radius: 0.75rem;
@@ -450,6 +452,10 @@ form {
   padding: 2rem;
 }
 
+.form-section {
+  padding: 0.5rem;
+}
+
 .form-section label{
   display: block;
 }
@@ -457,6 +463,8 @@ form {
 
 input, textarea {
   padding: 0.75rem 1.2rem;
+  border: 2px solid #f0f0f0;
+  border-radius: var(--outline-radius);
 }
 
 input:focus , textarea:focus {
@@ -464,6 +472,35 @@ input:focus , textarea:focus {
   border: 2px solid var(--button-hover);
   border-radius: var(--outline-radius);
   padding: 0.75rem 1.2rem;;
+}
+
+small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-section.success input, 
+.form-section.success textarea {
+  border-color: var(--success-color);
+}
+
+.form-section.error input, .form-section.success textarea {
+  border-color: var(--error-color);
+}
+
+.form-section small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-section.error small {
+  visibility: visible;
 }
 
 footer {
