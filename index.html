@@ -8,6 +8,7 @@
     <title>Eric Corona | The Caring Coder</title>
   </head>
   <body>
+    <div class="wrapper">
     <header class="nav-header">
       <a href="#main-content" class="screenreader-text" id="skip-nav"
         >Skip to Content</a>
@@ -61,7 +62,7 @@
         </div>
       </section>
       <section class="skills" id="skills" aria-labelledby="skills-title">
-        <div class="container flow">
+        <div class="container">
           <header>
             <h2 id="skills-title">Skills</h2>
           </header>
@@ -131,7 +132,7 @@
               method="get"
               enctype="text/plain"
             >
-              <div class="form-section">
+              <div class="form-section name">
                 <!-- if invalid input to be given aria-invalid='true' and connected to hint using aria-describedby ie 'email-hint'-->
                 <label for="fullname">Full Name: </label>
                 <input
@@ -144,7 +145,7 @@
                   Please enter full name
                 </p>
               </div>
-              <div class="form-section">
+              <div class="form-section email">
                 <label for="email">Email: </label>
                 <input
                   type="text"
@@ -156,7 +157,7 @@
                   Please enter valid email address
                 </p>
               </div>
-              <div class="form-section">
+              <div class="form-section message">
                 <label for="message">Message: </label>
                 <textarea
                   name="message"
@@ -184,6 +185,7 @@
       </ul>
       <p>Thanks you for visiting</p>
     </footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
