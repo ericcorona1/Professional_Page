@@ -58,17 +58,25 @@ function getFieldName(input) {
 }
 
 // Show confirmation, need to complete
-function showConfirmation(input) {}
+function showConfirmation(input) {
+  // change this to make message appear
+}
 
 // Check that all pass
 function checkPassing([inputArr]) {
-  inputArr.forEach((input) => {
-    if (input.className !== error) {
-      showConfirmation(input);
-    }
-  });
+  const myClassName = "success";
+  const allHaveClass = inputArr.every((value) =>
+    value.classList.contains(myClassName)
+  );
+  // do i want alert or populate small element
+  if (allHaveClass) {
+    alert("Message sent successfully!");
+  }
 }
 
+const myForm = document.querySelector("form");
+myForm.addEventListener("submit", checkArrayClass);
+//
 // Event listener
 form.addEventListener("submit", function (e) {
   e.preventDefault();
