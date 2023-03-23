@@ -404,8 +404,8 @@ nav a:focus {
   padding: 2rem;
 }
 
-.contact-list p, 
-.contact-list a{
+.contact-list p,
+.contact-list a {
   margin: 0;
   padding-top: 1rem;
   display: inline-block;
@@ -439,7 +439,7 @@ nav a:focus {
   /* this isnt working */
   .contact-types {
     border-top-right-radius: 0;
-    border-bottom-left-radius: var(--outline-radius)
+    border-bottom-left-radius: var(--outline-radius);
   }
 
   .contact-form {
@@ -456,22 +456,23 @@ form {
   padding: 0.5rem;
 }
 
-.form-section label{
+.form-section label {
   display: block;
 }
 
-
-input, textarea {
+input,
+textarea {
   padding: 0.75rem 1.2rem;
   border: 2px solid #f0f0f0;
   border-radius: var(--outline-radius);
 }
 
-input:focus , textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border: 2px solid var(--button-hover);
   border-radius: var(--outline-radius);
-  padding: 0.75rem 1.2rem;;
+  padding: 0.75rem 1.2rem;
 }
 
 small {
@@ -482,12 +483,13 @@ small {
   visibility: hidden;
 }
 
-.form-section.success input, 
+.form-section.success input,
 .form-section.success textarea {
   border-color: var(--success-color);
 }
 
-.form-section.error input, .form-section.success textarea {
+.form-section.error input,
+.form-section.success textarea {
   border-color: var(--error-color);
 }
 
@@ -503,8 +505,45 @@ small {
   visibility: visible;
 }
 
-footer {
+.primary-footer {
   background: var(--primary-color);
-  position: absolute;
   width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.primary-footer p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.primary-footer ul {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.primary-footer li {
+  margin-left: 1rem;
+}
+
+.primary-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.primary-footer a:footer {
+  outline: none;
+  border: 2px solid var(--button-hover);
+  border-radius: var(--outline-radius);
+  padding: 0.75rem 1rem;
+  color: black;
+  text-decoration: none;
 }
