@@ -8,15 +8,16 @@
     <title>Eric Corona | The Caring Coder</title>
   </head>
   <body>
-    <header>
+    <div class="wrapper">
+    <header class="nav-header">
       <a href="#main-content" class="screenreader-text" id="skip-nav"
-        >Skip to Content</a
-      >
+        >Skip to Content</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <h1>Eric "Cisco" Corona</h1>
       <nav class="primary-nav">
         <ul class="navbar" role="list">
           <li class="active">
-            <a href="/">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li>
             <a href="#about">About</a>
@@ -30,14 +31,14 @@
           <li>
             <a href="#contact">Contact Me</a>
           </li>
-          <a href="javascript:void(0);" class="icon" onclick="closeNav()">
-            &#9776;
-          </a>
         </ul>
       </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
     </header>
     <main id="main-content">
-      <section class="home" id="home" aria-labelledby="home-title">
+      <section class="home banner" id="home" aria-labelledby="home-title">
         <div class="container flow">
           <header>
             <h2 id="home-title">Eric "Cisco" Corona</h2>
@@ -61,30 +62,30 @@
         </div>
       </section>
       <section class="skills" id="skills" aria-labelledby="skills-title">
-        <div class="container flow">
+        <div class="container">
           <header>
             <h2 id="skills-title">Skills</h2>
           </header>
           <ul class="primary-skills" role="list">
-            <li>
-              <h3>Technical</h3>
-              <ul class="technical-list" role="list">
+            <li class="card">
+              <h3 class="card-title">Technical</h3>
+              <ul class="card-list" role="list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>Javascript</li>
               </ul>
             </li>
-            <li>
-              <h3>Tools</h3>
-              <ul class="tool-list" role="list">
+            <li class="card">
+              <h3 class="card-title">Tools</h3>
+              <ul class="card-list" role="list">
                 <li>Git</li>
                 <li>Bash</li>
                 <li>VS Code</li>
               </ul>
             </li>
-            <li>
-              <h3>Soft Skills</h3>
-              <ul class="soft-list" role="list">
+            <li class="card">
+              <h3 class="card-title">Soft Skills</h3>
+              <ul class="card-list" role="list">
                 <li>Crisis management</li>
                 <li>Expectation setting</li>
                 <li>Problem solving</li>
@@ -104,10 +105,10 @@
         </div>
       </section>
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="container flow">
-          <header>
-            <h2 id="contact-title">Get In Touch</h2>
-          </header>
+        <header>
+          <h2 id="contact-title">Get In Touch</h2>
+        </header>
+        <div class="contact-container">
           <div class="contact-types">
             <ul class="contact-list" role="list">
               <li>
@@ -125,13 +126,13 @@
               </li>
             </ul>
           </div>
-          <div class="container">
+          <div class="contact-form">
             <form
               action="mailto:ericcorona3@gmail.com"
               method="get"
               enctype="text/plain"
             >
-              <div class="form-section">
+              <div class="form-section name">
                 <!-- if invalid input to be given aria-invalid='true' and connected to hint using aria-describedby ie 'email-hint'-->
                 <label for="fullname">Full Name: </label>
                 <input
@@ -139,38 +140,41 @@
                   name="fullname"
                   id="fullname"
                   placeholder="Full name"
+                  class="control"
                 />
-                <p class="hint hidden" id="fullname-hint">
+                <small class="hint hidden" id="fullname-hint">
                   Please enter full name
-                </p>
+                </small>
               </div>
-              <div class="form-section">
+              <div class="form-section email">
                 <label for="email">Email: </label>
                 <input
                   type="text"
                   name="email"
                   id="email"
                   placeholder="Email"
+                  class="control"
                 />
-                <p class="hint hidden" id="email-hint">
+                <small class="hint hidden" id="email-hint">
                   Please enter valid email address
-                </p>
+                </small>
               </div>
-              <div class="form-section">
+              <div class="form-section message">
                 <label for="message">Message: </label>
                 <textarea
                   name="message"
                   id="message"
                   placeholder="Leave a message.."
+                  class="control"
                 ></textarea>
-                <p class="hint hidden" id="message-hint">
+                <small class="hint hidden" id="message-hint">
                   Please enter a message
-                </p>
+                </small>
               </div>
 
               <div aria-live="assertive" id="aria-message"></div>
 
-              <button type="submit">SEND</button>
+              <button type="submit" class="button">SEND</button>
             </form>
           </div>
         </div>
@@ -179,11 +183,16 @@
     <footer class="primary-footer">
       <p>Find me at:</p>
       <ul class="social-list" role="list">
-        <li>Github</li>
-        <li>Freecodecamp</li>
+        <li>
+          <a href="https://github.com/ericcorona1">Github</a>
+        </li>
+        <li>
+          <a href="https://www.freecodecamp.org/ericcorona">Freecodecamp</a>
+        </li>
       </ul>
       <p>Thanks you for visiting</p>
     </footer>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
