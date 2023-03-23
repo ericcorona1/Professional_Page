@@ -409,6 +409,12 @@ nav a:focus {
   margin: 0;
   padding-top: 1rem;
   display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  border-bottom: 2px solid var(--button-hover);
 }
 
 .contact-list a:focus {
@@ -537,9 +543,14 @@ small {
 .primary-footer a {
   color: white;
   text-decoration: none;
+  color: black;
 }
 
-.primary-footer a:footer {
+.primary-footer a:hover {
+  border-bottom: 2px solid var(--button-hover);
+}
+
+.primary-footer a:focus {
   outline: none;
   border: 2px solid var(--button-hover);
   border-radius: var(--outline-radius);
