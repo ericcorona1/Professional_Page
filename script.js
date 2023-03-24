@@ -2,12 +2,13 @@ const form = document.getElementById("form");
 const fullName = document.getElementById("fullname");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
+const submitDiv = document.getElementById("form-btn");
 const confirmation = document.getElementById("confirmation");
 
 // Show input error message
 function showError(input, notification) {
   const formControl = input.parentElement;
-  formControl.className = "form-control error";
+  formControl.className = "form-section error";
   const small = formControl.querySelector("small");
   small.innerText = notification;
 }
@@ -15,13 +16,19 @@ function showError(input, notification) {
 //Show success outline
 function showSuccess(input) {
   const formControl = input.parentElement;
-  formControl.className = "form-control success";
+  formControl.className = "form-section success";
+}
+
+// Show confirmation, need to complete
+function showConfirmation(notification) {
+  submitDiv.className = "form-btn success"
+  confirmation.innerText = notification;
 }
 
 //Check email is valid
 function checkEmail(input) {
   const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (re.test(input.value.trim())) {
     showSuccess(input);
   } else {
@@ -57,26 +64,20 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// Show confirmation, need to complete
-function showConfirmation(input) {
-  // change this to make message appear
-}
 
 // Check that all pass
-function checkPassing([inputArr]) {
-  const myClassName = "success";
-  const allHaveClass = inputArr.every((value) =>
-    value.classList.contains(myClassName)
-  );
-  // do i want alert or populate small element
+function checkPassing(inputArr) {
+  console.log(inputArr);
+  const allHaveClass = inputArr.every((value) => {
+   return value.parentElement.classList.contains("success");
+  });
+  console.log(allHaveClass);
   if (allHaveClass) {
-    alert("Message sent successfully!");
+    showConfirmation("Message sent successfully!");
   }
 }
 
-const myForm = document.querySelector("form");
-myForm.addEventListener("submit", checkArrayClass);
-//
+
 // Event listener
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -85,5 +86,10 @@ form.addEventListener("submit", function (e) {
   checkLength(fullName, 3);
   checkLength(message, 3);
   checkEmail(email);
-  checkPassing([fullName, email, message]);
+  checkPassing([fullName, email, message])
+  // checkPassing([fullName, email, message]);
+
+  if (checkPassing([fullName, email, message])) {
+    form.submit();
+  }
 });
