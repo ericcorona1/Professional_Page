@@ -67,13 +67,12 @@ function getFieldName(input) {
 
 // Check that all pass
 function checkPassing(inputArr) {
-  console.log(inputArr);
   const allHaveClass = inputArr.every((value) => {
    return value.parentElement.classList.contains("success");
   });
-  console.log(allHaveClass);
   if (allHaveClass) {
     showConfirmation("Message sent successfully!");
+    return true;
   }
 }
 
@@ -90,6 +89,7 @@ form.addEventListener("submit", function (e) {
   // checkPassing([fullName, email, message]);
 
   if (checkPassing([fullName, email, message])) {
+    console.log("it worked");
     form.submit();
   }
 });
