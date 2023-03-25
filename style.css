@@ -481,12 +481,12 @@ textarea:focus {
   padding: 0.75rem 1.2rem;
 }
 
-small {
+.form-section small {
   color: var(--error-color);
-  position: absolute;
   bottom: 0;
   left: 0;
   visibility: hidden;
+  padding-top: 0.5rem;
 }
 
 .form-section.success input,
@@ -495,20 +495,22 @@ small {
 }
 
 .form-section.error input,
-.form-section.success textarea {
+.form-section.error textarea {
   border-color: var(--error-color);
-}
-
-.form-section small {
-  color: var(--error-color);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
 }
 
 .form-section.error small {
   visibility: visible;
+  display: block;
+}
+
+.form-btn small {
+  visibility: hidden;
+}
+
+.form-btn.success small {
+  visibility: visible;
+  color: var(--success-color);
 }
 
 .primary-footer {
