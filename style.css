@@ -8,12 +8,13 @@
   --outline-focus: #000;
   --success-color: #2ecc71;
   --error-color: #e74c3c;
+  --botton-color: black;
 
   /* outline */
   --outline-radius: 0.75rem;
 
   /* font-sizes */
-  font-size: 12px;
+  font-size: 18px;
   --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
   --fs-l: clamp(2rem, 3.5vw + 1rem, 3rem);
   --fs-600: 2rem;
@@ -92,7 +93,7 @@ section {
   border-radius: var(--outline-radius);
   cursor: pointer;
   font-size: var(--fs-600);
-  color: white;
+  color: var(--botton-color);
   line-height: 1.5rem;
   padding: 0.75rem 1.2rem;
   text-align: center;
@@ -165,7 +166,7 @@ h1 {
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
   display: block;
-  background: white;
+  background: var(--botton-color);
   height: 2px;
   width: 2em;
   border-radius: 2px;
@@ -211,7 +212,7 @@ nav li {
 }
 
 nav a {
-  color: white;
+  color: var(--botton-color);
   text-decoration: none;
   font-size: var(--fs-600);
   opacity: 0;
@@ -543,7 +544,7 @@ textarea:focus {
 }
 
 .primary-footer a {
-  color: white;
+  color: var(--botton-color);
   text-decoration: none;
   color: black;
 }
