@@ -3,12 +3,12 @@
 :root {
   /* colors */
   --primary-color: rgb(230, 173, 182);
-  --button-color: rgb(230, 173, 182);
-  --button-hover: #000;
-  --outline-focus: #000;
+  --main-button-color: rgb(230, 173, 182);
+  --main-button-hover: black;
+  --font-hover-button-color: rgb(230, 173, 182);
+  --nav-a-hover: black;
   --success-color: #2ecc71;
   --error-color: #e74c3c;
-  --botton-color: black;
 
   /* outline */
   --outline-radius: 0.75rem;
@@ -60,17 +60,6 @@ body {
   height: 100%;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 0.3fr 1fr 0.3fr;
-  padding-bottom: 3rem;
-}
-
-section {
-  grid-column: 2 / 3;
-  margin-top: 2.5rem;
-}
-
 .banner {
   display: flex;
   flex-direction: column;
@@ -88,16 +77,16 @@ section {
 }
 
 .button {
-  background-color: var(--primary-color);
+  background-color: var(--main-button-color);
   border: 1px solid transparent;
   border-radius: var(--outline-radius);
   cursor: pointer;
   font-size: var(--fs-600);
-  color: var(--botton-color);
-  line-height: 1.5rem;
-  padding: 0.75rem 1.2rem;
+  color: var(--main-button-hover);
+  /* line-height: 1.5rem; */
+  /* padding: 0.75rem 1.2rem; */
   text-align: center;
-  text-decoration: none var(--button-color) solid;
+  text-decoration: none var(--main-) solid;
   text-decoration-thickness: auto;
   transition-duration: 0.2s;
   transition-property: background-color, border-color, color, fill, stroke;
@@ -110,12 +99,13 @@ section {
 
 .button:hover,
 .button:focus {
-  background: var(--button-hover);
+  background: var(--main-button-hover);
+  color: var(--font-hover-button-color);
 }
 
 .button:focus {
   box-shadow: none;
-  outline: 2px solid var(--outline-focus);
+  outline: 2px solid var(--main-button-outline-color);
   outline-offset: 2px;
 }
 
@@ -140,6 +130,8 @@ h1 {
   font-size: var(--fs-l);
 }
 
+/* hamburger start */
+
 .nav-toggle {
   position: absolute !important;
   top: -9999px !important;
@@ -147,7 +139,7 @@ h1 {
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid var(--button-hover);
+  outline: 3px solid var(--main-button-hover);
   border-radius: var(--outline-radius);
 }
 
@@ -166,8 +158,8 @@ h1 {
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
   display: block;
-  background: var(--botton-color);
-  height: 2px;
+  background: black;
+  height: 3px;
   width: 2em;
   border-radius: 2px;
   position: relative;
@@ -186,6 +178,10 @@ h1 {
 .nav-toggle-label span::after {
   top: 7px;
 }
+
+/* hamburger end */
+
+/* mobile nav start */
 
 nav {
   position: absolute;
@@ -206,36 +202,40 @@ nav ul {
 }
 
 nav li {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-right: 1em;
+  margin-bottom: 1rem;
+  /* padding: 0.5rem; */
 }
 
 nav a {
-  color: var(--botton-color);
+  color: var(--main-button-hover);
   text-decoration: none;
   font-size: var(--fs-600);
   opacity: 0;
   text-transform: uppercase;
   transition: opacity 150ms ease-in-out;
+  padding: 0.5rem;
+  border: 2px solid transparent;
 }
+
+nav a:hover,
+nav a:focus {
+  outline: none;
+  border: 2px solid var(--main-button-hover);
+  border-radius: var(--outline-radius);
+}
+
+/* mobile nav end */
+
+/* font size adjustment start */
 
 @media screen and (max-width: 1503px) {
   nav a {
     font-size: 1.5em;
   }
 }
+/* font size adjustment end */
 
-nav a:hover,
-nav a:focus {
-  color: var(--button-hover);
-}
-
-nav a:focus {
-  outline: none;
-  border: 2px solid var(--button-hover);
-  border-radius: var(--outline-radius);
-}
+/* mobile hidden menu start*/
 
 .nav-toggle:checked ~ nav {
   transform: scale(1, 1);
@@ -246,6 +246,10 @@ nav a:focus {
   transition: opacity 250ms ease-in-out 200ms;
 }
 
+/* mobile hidden menu end */
+
+/* full screen nav start */
+
 @media screen and (min-width: 1100px) {
   .nav-toggle-label {
     display: none;
@@ -254,7 +258,6 @@ nav a:focus {
   .nav-header {
     display: grid;
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-    /* fix this so it only  changes when it moves */
     transition: background-color 0.3s ease-in-out;
     transition-property: background-color;
     transition-duration: 0.3s;
@@ -283,14 +286,16 @@ nav a:focus {
     align-items: center;
   }
 
+
   nav ul {
     display: flex;
+    column-gap: 0.5rem;
   }
 
-  nav li {
+  /* nav li {
     margin-left: 2em;
-    /* margin-bottom: 0; */
-  }
+    margin-bottom: 0;
+  } */
 
   nav a {
     opacity: 1;
@@ -301,7 +306,7 @@ nav a:focus {
     content: "";
     display: block;
     height: 5px;
-    background: var(--button-hover);
+    background: var(--main-button-hover);
     position: absolute;
     top: -0.75em;
     left: 0;
@@ -323,6 +328,8 @@ nav a:focus {
   }
 }
 
+/* full screen nav end */
+
 .screenreader-text {
   height: 1px;
   left: -999px;
@@ -338,7 +345,7 @@ nav a:focus {
   position: static;
   width: auto;
   outline: none;
-  border: 2px solid var(--button-hover);
+  border: 2px solid var(--main-button-hover);
   border-radius: var(--outline-radius);
   color: black;
   text-decoration: none;
@@ -413,12 +420,12 @@ nav a:focus {
 }
 
 .contact-list a:hover {
-  border-bottom: 2px solid var(--button-hover);
+  border-bottom: 2px solid var(--main-button-hover);
 }
 
 .contact-list a:focus {
   outline: none;
-  border: 2px solid var(--button-hover);
+  border: 2px solid var(--main-button-hover);
   border-radius: var(--outline-radius);
 }
 
@@ -474,7 +481,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px solid var(--button-hover);
+  border: 2px solid var(--main-button-hover);
   border-radius: var(--outline-radius);
 }
 
@@ -540,18 +547,18 @@ textarea:focus {
 }
 
 .primary-footer a {
-  color: var(--botton-color);
+  color: var(--main-button-hover);
   text-decoration: none;
   color: black;
 }
 
 .primary-footer a:hover {
-  border-bottom: 2px solid var(--button-hover);
+  border-bottom: 2px solid var(--main-button-hover);
 }
 
 .primary-footer a:focus {
   outline: none;
-  border: 2px solid var(--button-hover);
+  border: 2px solid var(--main-button-hover);
   border-radius: var(--outline-radius);
   color: black;
   text-decoration: none;
