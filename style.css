@@ -346,6 +346,7 @@ nav a:focus {
   position: absolute;
   top: auto;
   width: 1px;
+  padding: 0.3rem;
 }
 
 .screenreader-text:focus {
@@ -359,6 +360,10 @@ nav a:focus {
   border-radius: var(--outline-radius);
   color: black;
   text-decoration: none;
+}
+
+img {
+  width: clamp(320px, calc(50% - 2rem), 50rem);
 }
 
 .primary-skills {
