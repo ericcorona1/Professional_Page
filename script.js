@@ -27,9 +27,9 @@ function showConfirmation(notification) {
 
 //Check email is valid
 function checkEmail(input) {
-  const re =
+  const regex=
   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (re.test(input.value.trim())) {
+  if (regex.test(input.value.trim())) {
     showSuccess(input);
   } else {
     showError(input, "Email is not valid");
@@ -78,8 +78,8 @@ function checkPassing(inputArr) {
 
 
 // Event listener
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
 
   checkRequired([fullName, email, message]);
   checkLength(fullName, 3);

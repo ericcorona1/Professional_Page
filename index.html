@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Eric Corona | The Caring Coder</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" type="module"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -124,7 +125,7 @@
               <ul class="contact-list" role="list">
                 <li>
                   <h3>Phone</h3>
-                  <p class="contact-info">209 200 5406</p>
+                  <p class="contact-info">323 364 5722</p>
                 </li>
                 <li>
                   <h3>Email</h3>
@@ -138,8 +139,9 @@
               </ul>
             </div>
             <div class="contact-form">
-              <form id="form">
-                action="mailto:ericcorona3@gmail.com" method="get" enctype="text/plain"
+              <form id="form"
+              action="mailto:ericcorona3@gmail.com" method="get" enctype="text/plain"
+              >
                 <div class="form-section">
                   <!-- if invalid input to be given aria-invalid='true' and connected to hint using aria-describedby ie 'email-hint'-->
                   <label for="fullname">Full Name: </label>
@@ -205,7 +207,5 @@
         <p>Thanks you for visiting</p>
       </footer>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
