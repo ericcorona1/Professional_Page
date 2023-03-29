@@ -16,8 +16,9 @@
   /* font-sizes */
   font-size: 18px;
   --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
-  --fs-l: clamp(2rem, 3.5vw + 1rem, 3rem);
+  --fs-l: clamp(2rem, 2vw + 1rem, 2.5rem);
   --fs-600: 2rem;
+  --fs-500: 1.5rem;
   --fs-400: 1rem;
 }
 
@@ -58,6 +59,11 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-weight: 400;
   height: 100%;
+}
+
+main {
+  max-width: 1400px;
+  margin: auto;
 }
 
 .banner {
@@ -196,7 +202,7 @@ nav {
 }
 
 nav ul {
-  margin: 0;
+  margin: 1rem 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -209,7 +215,7 @@ nav li {
 nav a {
   color: var(--main-button-hover);
   text-decoration: none;
-  font-size: var(--fs-600);
+  font-size: var(--fs-400);
   opacity: 0;
   text-transform: uppercase;
   transition: opacity 150ms ease-in-out;
@@ -228,9 +234,14 @@ nav a:focus {
 
 /* font size adjustment start */
 
-@media screen and (max-width: 1503px) {
+@media screen and (min-width: 1200px) {
   nav a {
-    font-size: 1.5em;
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 1649px) {
+  nav a {
+    font-size: var(--fs-500);
   }
 }
 /* font size adjustment end */
@@ -257,7 +268,7 @@ nav a:focus {
 
   .nav-header {
     display: grid;
-    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    grid-template-columns: 0.5fr auto minmax(600px, 3fr) 0.5fr;
     transition: background-color 0.3s ease-in-out;
     transition-property: background-color;
     transition-duration: 0.3s;
@@ -289,13 +300,12 @@ nav a:focus {
 
   nav ul {
     display: flex;
-    column-gap: 0.5rem;
+    /* column-gap: 0.5rem; */
   }
 
-  /* nav li {
-    margin-left: 2em;
+  nav li {
     margin-bottom: 0;
-  } */
+  }
 
   nav a {
     opacity: 1;
@@ -413,10 +423,11 @@ nav a:focus {
 .contact-list p,
 .contact-list a {
   margin: 0;
-  padding-top: 1rem;
+  padding: 0.5rem;
   display: inline-block;
   color: black;
   text-decoration: none;
+  border: 2px solid transparent;
 }
 
 .contact-list a:hover {
@@ -517,11 +528,14 @@ textarea:focus {
   color: var(--success-color);
 }
 
+/* footer start */
+
 .primary-footer {
   background: var(--primary-color);
   width: 100%;
   padding: 1rem;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .primary-footer p {
@@ -550,6 +564,8 @@ textarea:focus {
   color: var(--main-button-hover);
   text-decoration: none;
   color: black;
+  border: 2px solid transparent; 
+  padding: 0.5rem;
 }
 
 .primary-footer a:hover {
@@ -563,3 +579,5 @@ textarea:focus {
   color: black;
   text-decoration: none;
 }
+
+/* footer end */
