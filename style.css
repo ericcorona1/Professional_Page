@@ -14,7 +14,7 @@
   --outline-radius: 0.75rem;
 
   /* font-sizes */
-  font-size: 18px;
+  font-size: 20px;
   --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
   --fs-l: clamp(2rem, 2vw + 1rem, 2.5rem);
   --fs-600: 2rem;
@@ -82,9 +82,13 @@ main {
   font-size: var(--fs-xl);
 }
 
-.banner {
+.section-subtitle {
   font-size: var(--fs-600);
 }
+
+/* section p {
+  font-size: var(--fs-00);
+} */
 
 .button {
   background-color: var(--main-button-color);
@@ -206,7 +210,6 @@ nav {
 }
 
 nav ul {
-  margin: 1rem 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -238,7 +241,7 @@ nav a:focus {
 
 /* font size adjustment start */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1358px) {
   nav a {
     font-size: 1.25rem;
   }
@@ -387,6 +390,8 @@ img {
   }
 }
 
+
+
 /* certifications wrap end */
 
 .primary-skills {
@@ -400,6 +405,14 @@ img {
   border: 2px solid var(--primary-color);
   border-radius: var(--outline-radius);
 }
+
+/* .card h3 {
+  font-size: var(--fs-500);
+} */
+
+/* .card li {
+  font-size: var(--fs-400);
+} */
 
 .card-title {
   background: var(--primary-color);
