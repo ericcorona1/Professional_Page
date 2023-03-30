@@ -362,9 +362,30 @@ nav a:focus {
   text-decoration: none;
 }
 
-img {
-  width: clamp(320px, calc(50% - 2rem), 50rem);
+/* certifications wrap start */
+
+.img-container a{
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
 }
+
+img {
+  width: 100%;
+  padding: 0.5rem;
+  /* width: clamp(320px, calc(50% - 2rem), 50rem); */
+}
+
+@media screen and (min-width: 1000px) {
+  img {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* certifications wrap end */
 
 .primary-skills {
   display: grid;
@@ -492,6 +513,7 @@ textarea {
   padding: 0.75rem 1.2rem;
   border: 2px solid #f0f0f0;
   border-radius: var(--outline-radius);
+  width: 100%;
 }
 
 input:focus,
@@ -499,6 +521,10 @@ textarea:focus {
   outline: none;
   border: 2px solid var(--main-button-hover);
   border-radius: var(--outline-radius);
+}
+
+textarea {
+  height: 15rem;
 }
 
 .form-section small {
@@ -559,10 +585,6 @@ textarea:focus {
   justify-content: center;
   margin: 0 0 2rem;
   padding: 0;
-}
-
-.primary-footer li {
-  margin-left: 1rem;
 }
 
 .primary-footer a {
