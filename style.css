@@ -297,10 +297,8 @@ nav a:focus {
     align-items: center;
   }
 
-
   nav ul {
     display: flex;
-    /* column-gap: 0.5rem; */
   }
 
   nav li {
@@ -364,7 +362,7 @@ nav a:focus {
 
 /* certifications wrap start */
 
-.img-container a{
+.img-container a {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
@@ -508,6 +506,20 @@ form {
   display: block;
 }
 
+::-webkit-input-placeholder {
+  /* Edge */
+  font-size: var(--fs-400);
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-size: var(--fs-400);
+}
+
+::placeholder {
+  font-size: var(--fs-400);
+}
+
 input,
 textarea {
   padding: 0.75rem 1.2rem;
@@ -591,7 +603,7 @@ textarea {
   color: var(--main-button-hover);
   text-decoration: none;
   color: black;
-  border: 2px solid transparent; 
+  border: 2px solid transparent;
   padding: 0.5rem;
 }
 
