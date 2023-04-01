@@ -1,9 +1,14 @@
+// form items
 const form = document.getElementById("form");
 const fullName = document.getElementById("fullname");
 const email = document.getElementById("email");
 const message = document.getElementById("message");
 const submitDiv = document.getElementById("form-btn");
 const confirmation = document.getElementById("confirmation");
+
+// checkbox items
+const checkbox = document.getElementById("nav-toggle");
+const navlinks = document.querySelectorAll(".navbar li a");
 
 // Show input error message
 function showError(input, notification) {
