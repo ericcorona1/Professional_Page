@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
 :root {
   /* colors */
   --primary-color: rgb(230, 173, 182);
@@ -14,7 +12,7 @@
   --outline-radius: 0.75rem;
 
   /* font-sizes */
-  font-size: 18px;
+  font-size: 20px;
   --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
   --fs-l: clamp(2rem, 2vw + 1rem, 2.5rem);
   --fs-600: 2rem;
@@ -54,6 +52,10 @@ html {
   }
 }
 
+.container {
+  padding: 5rem 1rem 0 1rem;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
@@ -69,17 +71,49 @@ main {
 .banner {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 50vh; */
   align-items: center;
   justify-content: center;
+  padding: 2rem 1rem 0 1rem;
+}
+
+@media screen and (max-width: 731px) {
+  .banner {
+    padding-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 461px) {
+  .banner {
+    padding-top: 8rem;
+  }
 }
 
 .banner h2 {
   font-size: var(--fs-xl);
 }
 
-.banner {
+@media screen and (max-width: 462px) {
+  .banner h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.section-subtitle {
   font-size: var(--fs-600);
+}
+
+@media screen and (max-width: 462px) {
+  .section-subtitle {
+    font-size: var(--fs-500);
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .section-subtitle {
+    font-size: var(--fs-400);
+    margin-bottom: 2rem;
+  }
 }
 
 .button {
@@ -103,6 +137,12 @@ main {
   width: auto;
 }
 
+@media screen and (max-width: 769px) {
+  .button {
+    padding: 0.5rem;
+  }
+}
+
 .button:hover,
 .button:focus {
   background: var(--main-button-hover);
@@ -115,7 +155,7 @@ main {
   outline-offset: 2px;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .button {
     padding: 0.75rem 1.5rem;
   }
@@ -202,7 +242,6 @@ nav {
 }
 
 nav ul {
-  margin: 1rem 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -234,7 +273,7 @@ nav a:focus {
 
 /* font size adjustment start */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1358px) {
   nav a {
     font-size: 1.25rem;
   }
@@ -297,10 +336,8 @@ nav a:focus {
     align-items: center;
   }
 
-
   nav ul {
     display: flex;
-    /* column-gap: 0.5rem; */
   }
 
   nav li {
@@ -362,9 +399,30 @@ nav a:focus {
   text-decoration: none;
 }
 
-img {
-  width: clamp(320px, calc(50% - 2rem), 50rem);
+/* certifications wrap start */
+
+.img-container a {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
 }
+
+img {
+  width: 100%;
+  padding: 0.5rem;
+  /* width: clamp(320px, calc(50% - 2rem), 50rem); */
+}
+
+@media screen and (min-width: 1000px) {
+  img {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* certifications wrap end */
 
 .primary-skills {
   display: grid;
@@ -377,6 +435,14 @@ img {
   border: 2px solid var(--primary-color);
   border-radius: var(--outline-radius);
 }
+
+/* .card h3 {
+  font-size: var(--fs-500);
+} */
+
+/* .card li {
+  font-size: var(--fs-400);
+} */
 
 .card-title {
   background: var(--primary-color);
@@ -435,6 +501,10 @@ img {
   border: 2px solid transparent;
 }
 
+.contact-list a {
+  word-break: break-all;
+}
+
 .contact-list a:hover {
   border-bottom: 2px solid var(--main-button-hover);
 }
@@ -457,7 +527,7 @@ img {
   border-bottom-right-radius: var(--outline-radius);
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 650px) {
   .contact-container {
     display: grid;
     grid-auto-flow: column;
@@ -487,11 +557,26 @@ form {
   display: block;
 }
 
+::-webkit-input-placeholder {
+  /* Edge */
+  font-size: var(--fs-400);
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-size: var(--fs-400);
+}
+
+::placeholder {
+  font-size: var(--fs-400);
+}
+
 input,
 textarea {
   padding: 0.75rem 1.2rem;
   border: 2px solid #f0f0f0;
   border-radius: var(--outline-radius);
+  width: 100%;
 }
 
 input:focus,
@@ -499,6 +584,10 @@ textarea:focus {
   outline: none;
   border: 2px solid var(--main-button-hover);
   border-radius: var(--outline-radius);
+}
+
+textarea {
+  height: 15rem;
 }
 
 .form-section small {
@@ -561,15 +650,11 @@ textarea:focus {
   padding: 0;
 }
 
-.primary-footer li {
-  margin-left: 1rem;
-}
-
 .primary-footer a {
   color: var(--main-button-hover);
   text-decoration: none;
   color: black;
-  border: 2px solid transparent; 
+  border: 2px solid transparent;
   padding: 0.5rem;
 }
 

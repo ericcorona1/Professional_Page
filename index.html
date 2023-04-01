@@ -41,20 +41,14 @@
       </header>
       <main id="main-content">
         <section class="home banner" id="home" aria-labelledby="home-title">
-          <div class="container flow">
+          <div class="flow">
             <header>
               <h2 id="home-title">Eric "Cisco" Corona</h2>
               <p class="section-subtitle">
                 The Caring Coder: non-profit to front-end web development
               </p>
+              <a href="#contact" class="button">Contact Me</a>
             </header>
-            <a href="#contact" class="button">Contact Me</a>
-            <a
-              href="https://www.freecodecamp.org/ericcorona"
-              target="_blank"
-              class="button"
-              >Certifications</a
-            >
           </div>
         </section>
         <section class="about" id="about" aria-labelledby="about-title">
@@ -67,16 +61,20 @@
               development and strong interpersonal and communication skills that
               make working on a team hassle-free.
             </p>
-            <a href="https://www.freecodecamp.org/ericcorona" target="_blank">
-              <img
-                src="img/javascript-cert.png"
-                alt="freeCodeCamp certificate of completion of Javascript Algorithms and Data Structures issued February 9, 2023 "
-              />
-              <img
-                src="img/responsive-web-dev-cert.png"
-                alt="freeCodeCamp certificate of completion of Responsive Web Design issued October 11, 2019"
-              />
-            </a>
+            <div class="img-container">
+              <a href="https://www.freecodecamp.org/ericcorona" target="_blank">
+                <img
+                  src="img/javascript-cert.png"
+                  alt="freeCodeCamp certificate of completion of Javascript Algorithms and Data Structures issued February 9, 2023 "
+                />
+                <!-- </a> -->
+                <!-- <a href="https://www.freecodecamp.org/ericcorona" target="_blank"> -->
+                <img
+                  src="img/responsive-web-dev-cert.png"
+                  alt="freeCodeCamp certificate of completion of Responsive Web Design issued October 11, 2019"
+                />
+              </a>
+            </div>
           </div>
         </section>
         <section class="skills" id="skills" aria-labelledby="skills-title">
@@ -127,80 +125,84 @@
           </div>
         </section>
         <section class="contact" id="contact" aria-labelledby="contact-title">
-          <header>
-            <h2 id="contact-title">Get In Touch</h2>
-          </header>
-          <div class="contact-container">
-            <div class="contact-types">
-              <ul class="contact-list" role="list">
-                <li>
-                  <h3>Phone</h3>
-                  <p class="contact-info">323 364 5722</p>
-                </li>
-                <li>
-                  <h3>Email</h3>
-                  <a
-                    href="mailto:ericcorona3@gmail.com?subject=Checked your portfolio"
-                    target="_blank"
-                    class="contact-info"
-                    >ericcorona3@gmail.com</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="contact-form">
-              <form
-                id="form"
-                action="mailto:ericcorona3@gmail.com"
-                method="get"
-                enctype="text/plain"
-              >
-                <div class="form-section">
-                  <!-- if invalid input to be given aria-invalid='true' and connected to hint using aria-describedby ie 'email-hint'-->
-                  <label for="fullname">Full Name: </label>
-                  <input
-                    type="text"
-                    name="fullname"
-                    id="fullname"
-                    placeholder="Full name"
-                    class="control"
-                  />
-                  <small class="hint hidden" id="fullname-hint">
-                    Error message
-                  </small>
-                </div>
-                <div class="form-section">
-                  <label for="email">Email: </label>
-                  <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    placeholder="Email"
-                    class="control"
-                  />
-                  <small class="hint hidden" id="email-hint">
-                    Error message
-                  </small>
-                </div>
-                <div class="form-section">
-                  <label for="message">Message: </label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    placeholder="Leave a message.."
-                    class="control"
-                  ></textarea>
-                  <small class="hint hidden" id="message-hint">
-                    Error message
-                  </small>
-                </div>
+          <div class="container flow">
+            <header>
+              <h2 id="contact-title">Get In Touch</h2>
+            </header>
+            <div class="contact-container">
+              <div class="contact-types">
+                <ul class="contact-list" role="list">
+                  <li>
+                    <h3>Phone</h3>
+                    <p class="contact-info">323 364 5722</p>
+                  </li>
+                  <li>
+                    <h3>Email</h3>
+                    <a
+                      href="mailto:ericcorona3@gmail.com?subject=Checked your portfolio"
+                      target="_blank"
+                      class="contact-info"
+                      >ericcorona3@gmail.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="contact-form">
+                <form
+                  id="form"
+                  action="mailto:ericcorona3@gmail.com"
+                  method="get"
+                  enctype="text/plain"
+                >
+                  <div class="form-section">
+                    <!-- if invalid input to be given aria-invalid='true' and connected to hint using aria-describedby ie 'email-hint'-->
+                    <label for="fullname">Full Name: </label>
+                    <input
+                      type="text"
+                      name="fullname"
+                      id="fullname"
+                      placeholder="Full name"
+                      class="control"
+                    />
+                    <small class="hint hidden" id="fullname-hint">
+                      Error message
+                    </small>
+                  </div>
+                  <div class="form-section">
+                    <label for="email">Email: </label>
+                    <input
+                      type="text"
+                      name="email"
+                      id="email"
+                      placeholder="Email"
+                      class="control"
+                    />
+                    <small class="hint hidden" id="email-hint">
+                      Error message
+                    </small>
+                  </div>
+                  <div class="form-section">
+                    <label for="message">Message: </label>
+                    <textarea
+                      name="message"
+                      id="message"
+                      placeholder="Leave a message.."
+                      class="control"
+                    ></textarea>
+                    <small class="hint hidden" id="message-hint">
+                      Error message
+                    </small>
+                  </div>
 
-                <div aria-live="assertive" id="aria-message"></div>
-                <div class="form-btn" id="form-btn">
-                  <button type="submit" class="button submit-btn">SEND</button>
-                  <small id="confirmation" class="confirmation">sent</small>
-                </div>
-              </form>
+                  <div aria-live="assertive" id="aria-message"></div>
+                  <div class="form-btn" id="form-btn">
+                    <button type="submit" class="button submit-btn">
+                      SEND
+                    </button>
+                    <small id="confirmation" class="confirmation">sent</small>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </section>
