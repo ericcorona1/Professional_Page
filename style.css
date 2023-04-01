@@ -71,7 +71,6 @@ main {
 .banner {
   display: flex;
   flex-direction: column;
-  /* height: 50vh; */
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem 0 1rem;
@@ -123,8 +122,6 @@ main {
   cursor: pointer;
   font-size: var(--fs-600);
   color: var(--main-button-hover);
-  /* line-height: 1.5rem; */
-  /* padding: 0.75rem 1.2rem; */
   text-align: center;
   text-decoration: none var(--main-) solid;
   text-decoration-thickness: auto;
@@ -248,7 +245,6 @@ nav ul {
 
 nav li {
   margin-bottom: 1rem;
-  /* padding: 0.5rem; */
 }
 
 nav a {
@@ -411,7 +407,6 @@ nav a:focus {
 img {
   width: 100%;
   padding: 0.5rem;
-  /* width: clamp(320px, calc(50% - 2rem), 50rem); */
 }
 
 @media screen and (min-width: 1000px) {
@@ -435,14 +430,6 @@ img {
   border: 2px solid var(--primary-color);
   border-radius: var(--outline-radius);
 }
-
-/* .card h3 {
-  font-size: var(--fs-500);
-} */
-
-/* .card li {
-  font-size: var(--fs-400);
-} */
 
 .card-title {
   background: var(--primary-color);
