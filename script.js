@@ -10,6 +10,20 @@ const confirmation = document.getElementById("confirmation");
 const checkbox = document.getElementById("nav-toggle");
 const navlinks = document.querySelectorAll(".navbar li a");
 
+console.log(navlinks);
+
+// toggle checkbok on click
+const toggleNavbar = () => {
+  checkbox.checked = false;
+};
+
+// Nav toggle event listener
+navlinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    toggleNavbar();
+  });
+});
+
 // Show input error message
 function showError(input, notification) {
   const formControl = input.parentElement;
@@ -26,14 +40,14 @@ function showSuccess(input) {
 
 // Show confirmation, need to complete
 function showConfirmation(notification) {
-  submitDiv.className = "form-btn success"
+  submitDiv.className = "form-btn success";
   confirmation.innerText = notification;
 }
 
 //Check email is valid
 function checkEmail(input) {
-  const regex=
-  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const regex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (regex.test(input.value.trim())) {
     showSuccess(input);
   } else {
@@ -69,11 +83,10 @@ function getFieldName(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-
 // Check that all pass
 function checkPassing(inputArr) {
   const allHaveClass = inputArr.every((value) => {
-   return value.parentElement.classList.contains("success");
+    return value.parentElement.classList.contains("success");
   });
   if (allHaveClass) {
     showConfirmation("Message sent successfully!");
@@ -81,8 +94,7 @@ function checkPassing(inputArr) {
   }
 }
 
-
-// Event listener
+//Form event listener
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -90,11 +102,9 @@ form.addEventListener("submit", function (event) {
   checkLength(fullName, 3);
   checkLength(message, 3);
   checkEmail(email);
-  checkPassing([fullName, email, message])
-  // checkPassing([fullName, email, message]);
+  checkPassing([fullName, email, message]);
 
   if (checkPassing([fullName, email, message])) {
-    console.log("it worked");
     form.submit();
   }
 });
