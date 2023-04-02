@@ -52,9 +52,25 @@ html {
   }
 }
 
+/* padding so nav doesnt cover content start */
+
 .container {
   padding: 5rem 1rem 0 1rem;
 }
+
+@media screen and (max-width: 460px) {
+  .container {
+    padding: 8rem 1rem 0 1rem;
+  }
+}
+
+@media screen and (max-width: 729px) {
+  .container {
+    padding: 6rem 1rem 0 1rem;
+  }
+}
+
+/* padding so nav doesnt cover content end */
 
 body {
   margin: 0;

@@ -13,9 +13,9 @@ const navlinks = document.querySelectorAll(".navbar li a");
 console.log(navlinks);
 
 // toggle checkbok on click
-const toggleNavbar = () => {
+function toggleNavbar() {
   checkbox.checked = false;
-};
+}
 
 // Nav toggle event listener
 navlinks.forEach((link) => {
