@@ -19,9 +19,7 @@ function toggleNavbar() {
 
 // Nav toggle event listener
 navlinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    toggleNavbar();
-  });
+  link.addEventListener("click", toggleNavbar);
 });
 
 // Show input error message
