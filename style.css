@@ -14,7 +14,7 @@
   /* font-sizes */
   font-size: 20px;
   --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
-  --fs-l: clamp(2rem, 2vw + 1rem, 2.5rem);
+  --fs-l: clamp(0.85rem, 2vw + 0.5rem, 2.5rem);
   --fs-600: 2rem;
   --fs-500: 1.5rem;
   --fs-400: 1rem;
@@ -52,25 +52,9 @@ html {
   }
 }
 
-/* padding so nav doesnt cover content start */
-
 .container {
-  padding: 5rem 1rem 0 1rem;
+  padding: 2.5rem 1rem 0 1rem;
 }
-
-@media screen and (max-width: 460px) {
-  .container {
-    padding: 8rem 1rem 0 1rem;
-  }
-}
-
-@media screen and (max-width: 729px) {
-  .container {
-    padding: 6rem 1rem 0 1rem;
-  }
-}
-
-/* padding so nav doesnt cover content end */
 
 body {
   margin: 0;
@@ -89,19 +73,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem 0 1rem;
-}
-
-@media screen and (max-width: 731px) {
-  .banner {
-    padding-top: 5rem;
-  }
-}
-
-@media screen and (max-width: 461px) {
-  .banner {
-    padding-top: 8rem;
-  }
+  padding: 1rem 1rem 0 1rem;
 }
 
 .banner h2 {
@@ -329,6 +301,14 @@ nav a:focus {
 
   h1 {
     grid-column: 2 / 3;
+  }
+
+  .banner {
+    padding-top: 5rem;
+  }
+
+  .container {
+    padding-top: 5rem;
   }
 
   nav {
