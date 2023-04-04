@@ -18,6 +18,7 @@
   --fs-600: 2rem;
   --fs-500: 1.5rem;
   --fs-400: 1rem;
+  --line-height: 1.3em;
 }
 
 *,
@@ -56,6 +57,10 @@ html {
   padding: 2.5rem 1rem 0 1rem;
 }
 
+.description {
+  line-height: var(--line-height);
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, Arial;
@@ -90,7 +95,7 @@ main {
 
 .section-subtitle {
   font-size: var(--fs-600);
-  line-height: 1.3em;
+  line-height: var(--line-height);
 }
 
 
