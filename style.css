@@ -13,7 +13,7 @@
 
   /* font-sizes */
   font-size: 20px;
-  --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
+  --fs-xl: clamp(2.5rem, 9vw + 1rem, 9rem);
   --fs-l: clamp(0.85rem, 2vw + 0.5rem, 2.5rem);
   --fs-600: 2rem;
   --fs-500: 1.5rem;
@@ -78,25 +78,29 @@ main {
 
 .banner h2 {
   font-size: var(--fs-xl);
+  margin-bottom: auto;
 }
 
-@media screen and (max-width: 462px) {
+@media screen and (max-width: 1100px) {
   .banner h2 {
+    text-align: center;
     margin-bottom: 1rem;
   }
 }
 
 .section-subtitle {
   font-size: var(--fs-600);
+  line-height: 1.3em;
 }
 
-@media screen and (max-width: 462px) {
+
+@media screen and (max-width: 657px) {
   .section-subtitle {
     font-size: var(--fs-500);
   }
 }
 
-@media screen and (max-width: 345px) {
+@media screen and (max-width: 472px) {
   .section-subtitle {
     font-size: var(--fs-400);
     margin-bottom: 2rem;
@@ -475,6 +479,12 @@ img {
   padding: 2rem;
 }
 
+@media screen and (max-width:396px) {
+  .contact-list li {
+    padding: 1rem 0.6rem;
+  }
+}
+
 .contact-list p,
 .contact-list a {
   margin: 0;
@@ -485,9 +495,6 @@ img {
   border: 2px solid transparent;
 }
 
-.contact-list a {
-  word-break: break-all;
-}
 
 .contact-list a:hover {
   border-bottom: 2px solid var(--main-button-hover);
@@ -511,13 +518,13 @@ img {
   border-bottom-right-radius: var(--outline-radius);
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 850px) {
   .contact-container {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: auto;
   }
-  /* this isnt working */
+
   .contact-types {
     border-top-right-radius: 0;
     border-bottom-left-radius: var(--outline-radius);
