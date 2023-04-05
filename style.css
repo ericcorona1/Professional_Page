@@ -174,9 +174,9 @@ h1 {
 /* hamburger start */
 
 .nav-toggle {
-  display: none;
   top: -9999px !important;
   right: -9999px !important;
+  opacity: 0;
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
@@ -282,12 +282,12 @@ nav a:focus {
 /* mobile hidden menu start*/
 
 .nav-toggle:checked ~ nav {
-  transform: scale(1, 1);
+  transform: scale(1, 1); 
 }
 
 .nav-toggle:checked ~ nav a {
   opacity: 1;
-  transition: opacity 250ms ease-in-out 200ms;
+  transition: opacity 250ms ease-in-toggleout 200ms;
 }
 
 /* mobile hidden menu end */
