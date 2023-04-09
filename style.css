@@ -484,6 +484,10 @@ img {
   padding: 2rem;
 }
 
+span.contact b {
+  display: none;
+}
+
 @media screen and (max-width:396px) {
   .contact-list li {
     padding: 1rem 0.6rem;
