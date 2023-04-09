@@ -10,10 +10,10 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="nav-header">
         <a href="#main-content" class="screenreader-text" id="skip-nav"
           >Skip to Content</a
         >
+      <header class="nav-header">
         <input type="checkbox" id="nav-toggle" class="nav-toggle" />
         <h1>Eric "Cisco" Corona</h1>
         <nav class="primary-nav">
@@ -22,7 +22,7 @@
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skills" data-test="skills">Skills</a>
             </li>
             <li>
               <a href="#projects">Projects</a>
@@ -31,11 +31,13 @@
               <a href="#contact">Contact</a>
             </li>
             <li>
-              <a href="resume/resume.pdf" target="_blank">Resume</a>
+              <a href="resume/resume.pdf" target="_blank" data-test="resume"
+                >Resume</a
+              >
             </li>
           </ul>
         </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
+        <label for="nav-toggle" class="nav-toggle-label" id="nav-toggle-label">
           <span></span>
         </label>
       </header>
@@ -45,7 +47,8 @@
             <header>
               <h2 id="home-title">Eric "Cisco" Corona</h2>
               <p class="section-subtitle">
-                The Caring Coder: non-profit to front-end web development
+                The Caring Coder: Front-end web development by a compassionate
+                professional with a background in non-profit homelessnesss work
               </p>
               <a href="#contact" class="button">Contact Me</a>
             </header>
@@ -87,12 +90,13 @@
                   <li>HTML</li>
                   <li>CSS</li>
                   <li>Javascript</li>
+                  <li>Cypress End-to-end Testing</li>
                 </ul>
               </li>
               <li class="card">
                 <h3 class="card-title">Tools</h3>
                 <ul class="card-list" role="list">
-                  <li>Git</li>
+                  <li>Git / GitHub</li>
                   <li>Bash</li>
                   <li>VS Code</li>
                 </ul>
@@ -132,15 +136,15 @@
                 <ul class="contact-list" role="list">
                   <li>
                     <h3>Phone</h3>
-                    <p class="contact-info">323 364 5722</p>
+                    <p class="contact-info"><span class="contact">323<b>725 7520</b> 364<b>046 7068</b> 5722</span></p>
                   </li>
                   <li>
                     <h3>Email</h3>
                     <a
-                      href="mailto:ericcorona3@gmail.com?subject=Checked your portfolio"
+                      href="mail&#116;&#111;&#58;er&#105;&#37;63co%&#55;&#50;o&#110;a&#64;pr&#111;t&#111;&#110;%&#50;Eme?subject=Checked your portfolio"
                       target="_blank"
                       class="contact-info"
-                      >ericcorona3@gmail.com</a
+                      ><span class="contact">er<b>.example</b>iccor<b>.com</b>ona&#64;pro&#116;&#111;n&#46;me</span></a
                     >
                   </li>
                 </ul>
@@ -148,8 +152,8 @@
               <div class="contact-form">
                 <form
                   id="form"
-                  action="mailto:ericcorona3@gmail.com"
-                  method="get"
+                  action="https://formspree.io/f/mnqygydd"
+                  method="post"
                   enctype="text/plain"
                 >
                   <div class="form-section">

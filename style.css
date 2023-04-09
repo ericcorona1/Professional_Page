@@ -13,11 +13,12 @@
 
   /* font-sizes */
   font-size: 20px;
-  --fs-xl: clamp(3rem, 10vw + 1rem, 10rem);
-  --fs-l: clamp(2rem, 2vw + 1rem, 2.5rem);
+  --fs-xl: clamp(2.5rem, 9vw + 1rem, 9rem);
+  --fs-l: clamp(0.85rem, 2vw + 0.5rem, 2.5rem);
   --fs-600: 2rem;
   --fs-500: 1.5rem;
   --fs-400: 1rem;
+  --line-height: 1.3em;
 }
 
 *,
@@ -52,25 +53,13 @@ html {
   }
 }
 
-/* padding so nav doesnt cover content start */
-
 .container {
-  padding: 5rem 1rem 0 1rem;
+  padding: 2.5rem 1rem 0 1rem;
 }
 
-@media screen and (max-width: 460px) {
-  .container {
-    padding: 8rem 1rem 0 1rem;
-  }
+.description {
+  line-height: var(--line-height);
 }
-
-@media screen and (max-width: 729px) {
-  .container {
-    padding: 6rem 1rem 0 1rem;
-  }
-}
-
-/* padding so nav doesnt cover content end */
 
 body {
   margin: 0;
@@ -89,42 +78,34 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem 0 1rem;
-}
-
-@media screen and (max-width: 731px) {
-  .banner {
-    padding-top: 5rem;
-  }
-}
-
-@media screen and (max-width: 461px) {
-  .banner {
-    padding-top: 8rem;
-  }
+  padding: 1rem 1rem 0 1rem;
 }
 
 .banner h2 {
   font-size: var(--fs-xl);
+  margin-bottom: auto;
 }
 
-@media screen and (max-width: 462px) {
+@media screen and (max-width: 1100px) {
   .banner h2 {
+    text-align: center;
     margin-bottom: 1rem;
   }
 }
 
 .section-subtitle {
   font-size: var(--fs-600);
+  line-height: var(--line-height);
 }
 
-@media screen and (max-width: 462px) {
+
+@media screen and (max-width: 657px) {
   .section-subtitle {
     font-size: var(--fs-500);
   }
 }
 
-@media screen and (max-width: 345px) {
+@media screen and (max-width: 472px) {
   .section-subtitle {
     font-size: var(--fs-400);
     margin-bottom: 2rem;
@@ -176,25 +157,26 @@ main {
 
 .nav-header {
   background: var(--primary-color);
-  text-align: center;
   position: fixed;
   z-index: 999;
   width: 100%;
   display: grid;
-  grid-template-columns: 0.3fr 1fr 0.3fr;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
 }
 
 h1 {
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
   font-size: var(--fs-l);
+  padding-left: 1em;
 }
 
 /* hamburger start */
 
 .nav-toggle {
-  position: absolute !important;
   top: -9999px !important;
   right: -9999px !important;
+  opacity: 0;
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
@@ -300,12 +282,12 @@ nav a:focus {
 /* mobile hidden menu start*/
 
 .nav-toggle:checked ~ nav {
-  transform: scale(1, 1);
+  transform: scale(1, 1); 
 }
 
 .nav-toggle:checked ~ nav a {
   opacity: 1;
-  transition: opacity 250ms ease-in-out 200ms;
+  transition: opacity 250ms ease-in-toggleout 200ms;
 }
 
 /* mobile hidden menu end */
@@ -329,6 +311,14 @@ nav a:focus {
 
   h1 {
     grid-column: 2 / 3;
+  }
+
+  .banner {
+    padding-top: 5rem;
+  }
+
+  .container {
+    padding-top: 5rem;
   }
 
   nav {
@@ -494,6 +484,16 @@ img {
   padding: 2rem;
 }
 
+span.contact b {
+  display: none;
+}
+
+@media screen and (max-width:396px) {
+  .contact-list li {
+    padding: 1rem 0.6rem;
+  }
+}
+
 .contact-list p,
 .contact-list a {
   margin: 0;
@@ -504,9 +504,6 @@ img {
   border: 2px solid transparent;
 }
 
-.contact-list a {
-  word-break: break-all;
-}
 
 .contact-list a:hover {
   border-bottom: 2px solid var(--main-button-hover);
@@ -530,13 +527,13 @@ img {
   border-bottom-right-radius: var(--outline-radius);
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 850px) {
   .contact-container {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: auto;
   }
-  /* this isnt working */
+
   .contact-types {
     border-top-right-radius: 0;
     border-bottom-left-radius: var(--outline-radius);
