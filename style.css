@@ -98,7 +98,6 @@ main {
   line-height: var(--line-height);
 }
 
-
 @media screen and (max-width: 657px) {
   .section-subtitle {
     font-size: var(--fs-500);
@@ -282,7 +281,7 @@ nav a:focus {
 /* mobile hidden menu start*/
 
 .nav-toggle:checked ~ nav {
-  transform: scale(1, 1); 
+  transform: scale(1, 1);
 }
 
 .nav-toggle:checked ~ nav a {
@@ -410,13 +409,13 @@ nav a:focus {
   flex-wrap: wrap;
 }
 
-img {
+.img-container img {
   width: 100%;
   padding: 0.5rem;
 }
 
 @media screen and (min-width: 1000px) {
-  img {
+  .img-container img {
     -ms-flex: 50%;
     flex: 50%;
     max-width: 50%;
@@ -471,6 +470,61 @@ img {
   }
 }
 
+.project-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+.project-card img {
+  display: block;
+  border-top-left-radius: var(--outline-radius);
+  border-top-right-radius: var(--outline-radius);
+  padding: 0;
+  width: 100%;
+}
+
+.project-card .card-info {
+  border: 2px solid var(--primary-color);
+  border-bottom-left-radius: var(--outline-radius);
+  border-bottom-right-radius: var(--outline-radius);
+}
+
+.project-card .card-description {
+  padding: 0 0.4rem 1.5rem;
+}
+
+.project-card h3 {
+  background-color: var(--primary-color);
+  width: 100%;
+  margin: 0;
+  padding: 0.4rem;
+}
+
+.project-card p {
+  line-height: var(--line-height);
+  padding-bottom: 0.5rem;
+}
+
+.project-card a {
+  padding: 0.5em 0.7em;
+  font-size: var(--fs-400);
+}
+
+@media screen and (min-width: 1000px) {
+  .project-card {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+  
+  .project-card a {
+    font-size: var(--fs-500);
+  }
+}
+
 .contact-list {
   padding: 0;
 }
@@ -488,7 +542,7 @@ span.contact b {
   display: none;
 }
 
-@media screen and (max-width:396px) {
+@media screen and (max-width: 396px) {
   .contact-list li {
     padding: 1rem 0.6rem;
   }
@@ -503,7 +557,6 @@ span.contact b {
   text-decoration: none;
   border: 2px solid transparent;
 }
-
 
 .contact-list a:hover {
   border-bottom: 2px solid var(--main-button-hover);
