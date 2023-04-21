@@ -462,7 +462,7 @@ nav a:focus {
   padding: 0.5rem;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 572px) {
   .primary-skills {
     display: grid;
     grid-auto-flow: column;
@@ -472,7 +472,6 @@ nav a:focus {
 
 .projects {
   display: flex;
-  flex: wrap;
   flex-direction: column;
   gap: 1rem;
 }
@@ -480,7 +479,6 @@ nav a:focus {
 .project-card {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -525,6 +523,11 @@ nav a:focus {
 @media screen and (min-width: 1000px) {
   .projects {
     flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .project-card {
+    /* flex-basis: 50%; */
   }
   
   .project-card a {
