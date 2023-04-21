@@ -470,6 +470,13 @@ nav a:focus {
   }
 }
 
+.projects {
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -483,7 +490,9 @@ nav a:focus {
   border-top-left-radius: var(--outline-radius);
   border-top-right-radius: var(--outline-radius);
   padding: 0;
+  height: 300px;
   width: 100%;
+  object-fit: cover;
 }
 
 .project-card .card-info {
@@ -514,10 +523,8 @@ nav a:focus {
 }
 
 @media screen and (min-width: 1000px) {
-  .project-card {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
+  .projects {
+    flex-direction: row;
   }
   
   .project-card a {
