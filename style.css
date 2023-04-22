@@ -527,7 +527,7 @@ nav a:focus {
   }
 
   .project-card {
-    /* flex-basis: 50%; */
+    flex-basis: calc(50% - 0.5rem);
   }
   
   .project-card a {
