@@ -72,11 +72,11 @@ body {
   height: 100%;
 }
 
-.wrapper {
+/* .wrapper {
   margin-left: auto;
   margin-right: auto;
   width: var(--container-width);
-}
+} */
 
 main {
   /* max-width: 1400px; */
