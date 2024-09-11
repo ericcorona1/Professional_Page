@@ -21,8 +21,8 @@
   --line-height: 1.3em;
 
   /* container width */
-  --container-width: 88%
-  --container-max-width: 80em
+  --container-width: 88%;
+  --container-max-width: 80em;
 }
 
 *,
@@ -72,8 +72,14 @@ body {
   height: 100%;
 }
 
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--container-width);
+}
+
 main {
-  max-width: 1400px;
+  /* max-width: 1400px; */
   margin: auto;
 }
 
@@ -160,9 +166,8 @@ main {
 
 .nav-header {
   background: var(--primary-color);
-  position: fixed;
+  position: relative;
   z-index: 999;
-  width: 100%;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr auto;
@@ -486,7 +491,6 @@ nav a:focus {
   width: 100%;
 }
 
-
 .project-card img {
   display: block;
   border-top-left-radius: var(--outline-radius);
@@ -533,7 +537,7 @@ nav a:focus {
   .project-card {
     flex-basis: calc(50% - 0.5rem);
   }
-  
+
   .project-card a {
     font-size: var(--fs-500);
   }
